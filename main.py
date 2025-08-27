@@ -43,3 +43,9 @@ filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 st.subheader(f'뉴욕시 픽업 및 하차 현황 {hour_to_filter}:00')
 st.map(filtered_data)
 
+# 드롭다운 메뉴 (Selectbox)
+favorite_fruit = st.selectbox(
+    '좋아하는 과일을 선택하십시오:',
+    ('사과', '바나나', '딸기', '오렌지')
+)
+st.write(f"선택된 과일: {favorite_fruit}")
