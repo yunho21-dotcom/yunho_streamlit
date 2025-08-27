@@ -63,3 +63,30 @@ if st.button("클릭"):
     st.success("처리가 완료되었습니다.")
 else:
     st.write("버튼 클릭 대기 중입니다.")
+
+# 레이아웃 구성
+
+st.title("레이아웃 구성")
+
+# 사이드바에 요소 배치
+sidebar_selection = st.sidebar.selectbox(
+    "사이드바 옵션 선택",
+    ["옵션 A", "옵션 B", "옵션 C"]
+)
+st.sidebar.write(f"선택된 항목: {sidebar_selection}")
+
+# 컬럼 생성 및 콘텐츠 배치
+col1, col2 = st.columns(2) # 화면을 2개의 컬럼으로 분할
+
+with col1:
+    st.header("컬럼 1")
+    st.write("이 영역은 첫 번째 컬럼에 해당합니다.")
+    # 체크박스 위젯
+    if st.checkbox("메시지 표시"):
+        st.write("체크박스가 선택되었습니다.")
+
+with col2:
+    st.header("컬럼 2")
+    st.write("이 영역은 두 번째 컬럼에 해당합니다.")
+    # 이미지 표시
+    st.image("https://static.streamlit.io/examples/cat.jpg", caption="샘플 이미지")
