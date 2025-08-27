@@ -90,3 +90,27 @@ with col2:
     st.write("이 영역은 두 번째 컬럼에 해당합니다.")
     # 이미지 표시
     st.image("https://static.streamlit.io/examples/cat.jpg", caption="샘플 이미지")
+
+# Pandas 데이터프레임 및 차트 시각화
+st.title("데이터 시각화")
+
+# Pandas 데이터프레임 생성
+data = {
+    '첫 번째 컬럼': [1, 2, 3, 4],
+    '두 번째 컬럼': [10, 20, 30, 40]
+}
+df = pd.DataFrame(data)
+
+st.write("Pandas 데이터프레임 표시:")
+st.dataframe(df) # 스크롤 가능한 테이블 형식으로 표시
+
+st.write("라인 차트:")
+# 랜덤 시계열 데이터 생성
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3), # 20행 3열의 랜덤 데이터
+    columns=['a', 'b', 'c']
+)
+st.line_chart(chart_data)
+
+st.write("막대 차트:")
+st.bar_chart(chart_data)
