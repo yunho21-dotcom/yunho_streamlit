@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 
 st.title('streamlit 예제 실습')
 
@@ -49,3 +50,16 @@ favorite_fruit = st.selectbox(
     ('사과', '바나나', '딸기', '오렌지')
 )
 st.write(f"선택된 과일: {favorite_fruit}")
+
+# 버튼 입력처리
+st.title("버튼 위젯")
+# 버튼 생성 및 클릭 이벤트 처리
+if st.button("클릭"):
+    st.write("버튼이 클릭되었습니다.")
+    
+    # 작업 진행 상태 표시
+    with st.spinner('처리 중...'):
+        time.sleep(2) # 2초 대기 (작업 시뮬레이션)
+    st.success("처리가 완료되었습니다.")
+else:
+    st.write("버튼 클릭 대기 중입니다.")
